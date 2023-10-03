@@ -57,7 +57,8 @@ app.post('/login', (req, res) => {
   const handlePassword = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
   pool.query(handleEmail, [req.body.email], (err, emailData) => {
     if (err) {
-      return res.json(`${err}`);
+      return res.json(`${err} 
+      ${req.body.email}`);
     }
     if (emailData.length > 0) {
       pool.query(handlePassword, [req.body.email, req.body.password], (err, passwordData) => {
