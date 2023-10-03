@@ -7,13 +7,13 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host:  'localhost',
+  host:  '127.0.0.1',
   user: 'root',
   password: '4hq183kl',
   database: 'POS',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 50
 });
 
 //Create user
