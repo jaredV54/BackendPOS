@@ -8,6 +8,7 @@ app.use(express.json());
 
 const pool = mysql.createPool({
   host:  '127.0.0.1',
+  port: '3306',
   user: 'root',
   password: '4hq183kl',
   database: 'POS',
@@ -634,6 +635,7 @@ const PORT = process.env.PORT || 8081;
 
 app.get('/', (req, res) => {
   res.send('Server is running');
+  console.log(process.env.PORT);
 });
 
 app.listen(PORT, () => {
