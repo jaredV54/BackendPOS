@@ -52,11 +52,11 @@ app.get('/user', (req, res) => {
 
 //Log In
 app.post('/login', (req, res) => {
-  const handleEmail = "SELECT * FROM pos.login WHERE `email` = ?";
-  const handlePassword = "SELECT * FROM pos.login WHERE `email` = ? AND `password` = ?";
+  const handleEmail = "SELECT * FROM login WHERE `email` = ?";
+  const handlePassword = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
   pool.query(handleEmail, [req.body.email], (err, emailData) => {
     if (err) {
-      return res.json("Error");
+      return res.json(`${err}`);
     }
     if (emailData.length > 0) {
       pool.query(handlePassword, [req.body.email, req.body.password], (err, passwordData) => {
