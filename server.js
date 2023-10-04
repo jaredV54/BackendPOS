@@ -7,11 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER, 
-  port: process.env.DB_PORT, 
-  password: process.env.DB_PASSWORD, 
-  database: process.env.DB_NAME,
+  host: 'backendpos-production.up.railway.app', 
+  user: 'root',
+  password: '4hq183kl',
+  database: 'POS',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -631,12 +630,12 @@ app.get('/splitPaymentRecords', (req, res) => {
   })
 })
 
-const PORT = process.env.DB_PORT || 8081;
+const PORT = process.env.PORT || 8081;
 
 app.get('/', (req, res) => {
-  res.send(`Server is running : ${process.env.DB_PORT || 8081}`);
+  res.send(`Server is running : ${process.env.PORT || 8081}`);
 });
 
 app.listen(PORT, () => {
-  console.log('Server is running on port 8081 ' + process.env.DB_PORT || 8081);
+  console.log('Server is running on port 8081 ' + process.env.PORT || 8081);
 });
