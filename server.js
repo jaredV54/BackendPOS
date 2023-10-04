@@ -630,7 +630,7 @@ app.get('/splitPaymentRecords', (req, res) => {
   })
 })
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 3306;
 
 app.get('/', (req, res) => {
   res.send(`Server is running : ${process.env.PORT}`);
