@@ -187,7 +187,7 @@ app.get('/product', (req, res) => {
   pool.query(sql, (err, result) => {
     if (err) {
       console.error(err);
-      return res.json("Error retrieving products");
+      return res.json("Error retrieving products " +  err);
     }
     console.log(result)
     return res.json(result);
