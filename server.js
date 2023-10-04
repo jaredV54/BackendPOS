@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: 'LAPTOP-JC4CAK8D', 
+  host: 'backendpos-production.up.railway.app', 
   user: 'root',
   password: '4hq183kl',
   database: 'POS',
