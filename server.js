@@ -8,7 +8,6 @@ app.use(express.json());
 
 const pool = mysql.createPool({
   host:  '127.0.0.1',
-  port: '3306',
   user: 'root',
   password: '4hq183kl',
   database: 'POS',
@@ -57,8 +56,7 @@ app.post('/login', (req, res) => {
   const handlePassword = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
   pool.query(handleEmail, [req.body.email], (err, emailData) => {
     if (err) {
-      return res.json(`${err} 
-      ${req.body.email}`);
+      return res.status(500).json({ error: "Internal server error. " + err});
     }
     if (emailData.length > 0) {
       pool.query(handlePassword, [req.body.email, req.body.password], (err, passwordData) => {
