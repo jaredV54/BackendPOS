@@ -9,6 +9,7 @@ app.use(express.json());
 const pool = mysql.createPool({
   host:  '127.0.0.1',
   user: 'root',
+  port: '8081',
   password: '4hq183kl',
   database: 'POS',
   waitForConnections: true,
