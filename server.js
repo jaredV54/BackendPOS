@@ -11,11 +11,10 @@ const pool = mysql.createPool({
   user: 'root',
   password: '4hq183kl',
   database: 'POS',
+  waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
-
-//waitForConnections: true,
 
 //Create user
 app.post('/user', (req, res) => {
