@@ -638,5 +638,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Server is running on port 8081');
+  console.log('Server is running on port 3306');
 });
