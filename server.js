@@ -631,13 +631,12 @@ app.get('/splitPaymentRecords', (req, res) => {
   })
 })
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.DB_PORT || 8081;
 
 app.get('/', (req, res) => {
-  res.send(`Server is running : ${process.env.PORT || 8081}`);
+  res.send(`Server is running : ${process.env.DB_PORT || 8081}`);
 });
 
 app.listen(PORT, () => {
-  console.log('Server is running on port 8081');
-  console.log(`${process.env.PORT || 8081}`)
+  console.log('Server is running on port 8081 ' + process.env.DB_PORT || 8081);
 });
